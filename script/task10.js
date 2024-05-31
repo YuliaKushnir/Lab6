@@ -1,21 +1,21 @@
 function checkBrackets(str) {
-    const brackets = {
-      '(': ')',
-      '{': '}',
-      '[': ']'
-    };
-    const stack = [];
+  const brackets = {
+    '(': ')',
+    '{': '}',
+    '[': ']'
+  };
+  const stack = [];
   
-    for (const char of str) {
-      if (brackets[char]) {
-        stack.push(brackets[char]);
-      } else if (char === ')' || char === '}' || char === ']') {
-        if (stack.pop() !== char) {
-          return false;
-        }
+  for (const char of str) {
+    if (brackets[char]) {
+      stack.push(brackets[char]);
+    } else if (char === ')' || char === '}' || char === ']') {
+      if (stack.pop() !== char) {
+        return false;
       }
     }
-    return stack.length === 0;
+  }
+  return stack.length === 0;
 }
   
 let str1 = "function checkBrackets(str) {const brackets = {'(': ')', '{': '}', '[': ']'};}";
